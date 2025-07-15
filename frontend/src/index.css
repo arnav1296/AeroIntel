@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Syne:wght@400..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Syne:wght@400..800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -6,6 +6,9 @@
   --secondary-color: #1a1a1a;
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
+  --text-accent: #00ffa3;
+  --background-color: #000000;
+  --surface-color: #1a1a1a;
   --background-dark: #0d0d0d;
   --background-light: #141414;
   --border-color: #262626;
@@ -13,7 +16,9 @@
 }
 
 body {
-  font-family: "Archivo", "Inter", sans-serif;
+  font-family: "Inter", "Noto Sans", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
   overscroll-behavior-y: none;
 }
 
@@ -30,4 +35,49 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+/* Navigation styles */
+.nav-link:hover {
+  color: var(--text-accent);
+}
+
+.nav-link-active {
+  color: var(--text-accent);
+  border-bottom: 2px solid var(--text-accent);
+  padding-bottom: 4px;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background-color: #d9e000;
+  transform: scale(1.05);
+}
+
+/* Font families */
+.font-title {
+  font-family: "Archivo Black", sans-serif;
+}
+
+.font-accent {
+  font-family: "Syne", sans-serif;
+}
+
+/* Background text overlay */
+.bg-text-overlay {
+  position: absolute;
+  font-size: 18vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Archivo Black", sans-serif;
 }

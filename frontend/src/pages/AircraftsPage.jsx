@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
 const AircraftsPage = () => {
+  const navigate = useNavigate()
   const [aircrafts, setAircrafts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -82,7 +83,7 @@ const AircraftsPage = () => {
                 <div
                   key={aircraft._id}
                   className="aircraft-card group relative overflow-hidden rounded-xl bg-[var(--background-light)] border border-[var(--border-color)] cursor-pointer hover:shadow-[0_10px_30px_-5px_rgba(0,0,0,0.5),0_0_20px_var(--accent-glow)] hover:scale-[1.02] transition-all duration-500"
-                  onClick={() => handleAircraftClick(aircraft)}
+                  onClick={() => navigate(`/aircrafts/${aircraft.name}`)}
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}

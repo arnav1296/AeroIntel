@@ -2,11 +2,12 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import AircraftsPage from "./pages/aircraftsPage";
+import AircraftDetails from "./pages/AircraftDetails";
 import CountryPage from "./pages/CountryPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CountryDetails from "./pages/CountryDetails";
 import Home from "./pages/HomePage";
-import AircraftsPage from "./pages/AircraftsPage";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/countries" element={<CountryPage />} />
         <Route path="/country/:countryName" element={<CountryDetails />} />
         <Route path="/aircrafts" element={<AircraftsPage />} />
+        <Route path='/aircrafts/:aircraftName' element ={<AircraftDetails />} />
       </Routes>
     </Router>
   );

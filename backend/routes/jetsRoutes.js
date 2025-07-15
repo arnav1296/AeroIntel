@@ -11,6 +11,23 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:aircraftName", async (req, res) => {
+  try {
+    const { aircraftName } = req.params;
+    const aircraft = await jetData.findOne({
+      name: { $regex: new RegExp(aircraftName, "i") },
+    });
+
+    if (!aircraft) {
+      res.status(404).json({ msg: "Requested aircraft not found" });
+    }
+
+    res.json(aircraft);
+  } catch (err) {
+    res.status(500).json({ msg: "Error fetching desired aircraft" });
+  }
+});
+
 //search jets using name
 router.get("/search", async (req, res) => {
   try {
@@ -42,7 +59,7 @@ router.delete("/:id", async (req, res) => {
     if (!deletedAircraft) {
       return res.status(404).json({ msg: "Country not found" });
     }
-    res.json({msg: "Aircraft deleted successfully", deletedAircraft});
+    res.json({ msg: "Aircraft deleted successfully", deletedAircraft });
   } catch (err) {
     res.status(500).json({ msg: "error deleting aircraft" });
   }

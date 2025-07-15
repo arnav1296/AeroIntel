@@ -49,7 +49,7 @@ const Header = ({ activeLink = "home" }) => {
                 ? "text-[var(--primary-color)] relative" 
                 : "text-[var(--text-secondary)] hover:text-[var(--primary-color)]"
             }`}
-            href="#"
+            href="/aircrafts"
             style={activeLink === "aircraft" ? { fontFamily: '"Syne", sans-serif', fontWeight: 700 } : {}}
           >
             Aircraft
