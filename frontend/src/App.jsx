@@ -7,8 +7,8 @@ import AircraftDetails from "./pages/AircraftDetails";
 import CountryPage from "./pages/CountryPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CountryDetails from "./pages/CountryDetails";
+import ComparePage from "./pages/ComparePage";
 import Home from "./pages/HomePage";
-
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
         <Route path="/countries" element={<CountryPage />} />
         <Route path="/country/:countryName" element={<CountryDetails />} />
         <Route path="/aircrafts" element={<AircraftsPage />} />
-        <Route path='/aircrafts/:aircraftName' element ={<AircraftDetails />} />
+        <Route path="/aircrafts/:aircraftName" element={<AircraftDetails />} />
+        <Route path="/compare" element={<ComparePage />} />
       </Routes>
     </Router>
   );

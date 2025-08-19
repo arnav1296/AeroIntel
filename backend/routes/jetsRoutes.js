@@ -34,7 +34,7 @@ router.get("/search", async (req, res) => {
     const { name } = req.query;
     let query = {};
     if (name) {
-      query.name = { $regexp: new RegExp(name, "i") };
+      query.name = { $regex: new RegExp(name, "i") };
     }
     const aircraft = await jetData.find(query).sort({ name: 1 });
     res.json(aircraft);

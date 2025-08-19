@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Syne:wght@400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Syne:wght@400..800&display=swap");
 @import "tailwindcss";
 
 :root {
   --primary-color: #00ffa3;
   --secondary-color: #1a1a1a;
+  --tertiary-color: #1672ce;
+  --quaternary-color: #293038;
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
   --text-accent: #00ffa3;
@@ -13,6 +15,8 @@
   --background-light: #141414;
   --border-color: #262626;
   --accent-glow: rgba(0, 255, 163, 0.3);
+  --accent-1: #ff00e5;
+  --accent-2: #00ffff;
 }
 
 body {
